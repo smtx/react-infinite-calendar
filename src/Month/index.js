@@ -8,7 +8,7 @@ export default class Month extends Component {
 		return (!nextProps.isScrolling && !this.props.isScrolling);
 	}
 	renderRows() {
-		let {disabledDates, disabledDays, displayDate, locale, maxDate, minDate, onDaySelect, rowHeight, rows, selectedDate, today, theme} = this.props;
+		let {disabledDates, disabledDays, displayDate, locale, maxDate, minDate, onDaySelect, rowHeight, rows, selectedDate, today, theme, events} = this.props;
 		let currentYear = today.date.year();
 		let monthShort = displayDate.format('MMM');
 		let monthRows = [];
@@ -16,6 +16,11 @@ export default class Month extends Component {
 		let isDisabled = false;
 		let isSelected = false;
 		let isToday = false;
+		let isEvent = false;
+		let isEventStart = false;
+		let isEventMiddle = false;
+		let isEventEnd = false;
+		let eventsQty = 0;
 		let row, date, days;
 
 		// Oh the things we do in the name of performance...
@@ -35,6 +40,12 @@ export default class Month extends Component {
 					disabledDays && disabledDays.length && disabledDays.indexOf(date.date.day()) !== -1 ||
 					disabledDates && disabledDates.length && disabledDates.indexOf(date.yyyymmdd) !== -1
 				);
+				eventsQty = events.filter(event => date.yyyymmdd === event.eventStart && !event.eventEnd).length;
+				isEvent = eventsQty > 0;
+				isEventStart = events.filter(event => date.yyyymmdd === event.eventStart && event.eventEnd).length > 0;
+				isEventMiddle = events.filter(event => date.yyyymmdd > event.eventStart && (event.eventEnd && date.yyyymmdd < event.eventEnd)).length > 0;
+				isEventEnd = events.filter(event => date.yyyymmdd === event.eventEnd).length > 0;
+
 
 				days[k] = (
 					<Day
@@ -49,6 +60,11 @@ export default class Month extends Component {
 						locale={locale}
 						monthShort={monthShort}
 						theme={theme}
+						isEvent={isEvent}
+						isEventStart={isEventStart}
+						isEventMiddle={isEventMiddle}
+						isEventEnd={isEventEnd}
+						eventsQty={eventsQty}
 					/>
 				);
 			}

@@ -25,7 +25,8 @@ export default class List extends Component {
 		maxDate: validParsedDate,
 		showOverlay: PropTypes.bool,
 		theme: PropTypes.object,
-		locale: PropTypes.object
+		locale: PropTypes.object,
+		events: PropTypes.array
 	};
 	componentDidMount() {
 		let vs = this.refs.VirtualScroll;
@@ -81,9 +82,9 @@ export default class List extends Component {
 		}
 	};
 	renderMonth = ({index, isScrolling, style: rowStyle}) => {
-		let {disabledDates, disabledDays, locale, months, maxDate, minDate, onDaySelect, rowHeight, selectedDate, showOverlay, theme, today} = this.props;
+		let {disabledDates, disabledDays, locale, months, maxDate, minDate, onDaySelect, rowHeight, selectedDate, showOverlay, theme, today, events} = this.props;
 		let {date, rows} = this.memoize(months[index]);
-
+		console.log('events: ', events);
 		return (
 			<Month
 				key={`Month-${index}`}
@@ -100,6 +101,7 @@ export default class List extends Component {
 				showOverlay={showOverlay}
 				today={today}
 				theme={theme}
+				events={events}
 				locale={locale}
 				rowStyle={rowStyle}
 			/>

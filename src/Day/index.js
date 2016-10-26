@@ -1,14 +1,39 @@
 import React from 'react';
 const style = require('./Day.scss');
 
-export default function Day({currentYear, date, day, handleDayClick, isDisabled, isToday, isSelected, monthShort, locale, theme}) {
+export default function Day({
+	currentYear,
+	date,
+	day,
+	handleDayClick,
+	isDisabled,
+	isToday,
+	isSelected,
+	monthShort,
+	locale,
+	theme,
+	isEvent,
+	isEventStart,
+	isEventMiddle,
+	isEventEnd,
+	eventsQty,
+}) {
 	var {date: mmt, yyyymmdd} = date;
 	var year = mmt.year();
 
 	return (
 		<li
 			style={(isToday) ? {color: theme.todayColor} : null}
-			className={`${style.root}${isToday ? ' ' + style.today : ''}${isSelected ? ' ' + style.selected : ''}${isDisabled ? ' ' + style.disabled : ' ' + style.enabled}`}
+			className={`
+				${style.root}${isToday ? ' ' + style.today : ''}
+				${isSelected ? ' ' + style.selected : ''}
+				${isDisabled ? ' ' + style.disabled : ' ' + style.enabled}
+				${isEvent ? ' ' + style.event : ''}
+				${isEventStart ? ' ' + style.eventStart : ''}
+				${isEventMiddle ? ' ' + style['event-middle'] : ''}
+				${isEventEnd ? ' ' + style.eventEnd : ''}
+			`}
+			data-event-qty={eventsQty > 1 ? `x${eventsQty}` : null}
 			data-date={yyyymmdd}
 			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt) : null}
 		>

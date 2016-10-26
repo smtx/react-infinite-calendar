@@ -54,7 +54,8 @@ export default class InfiniteCalendar extends Component {
 		tabIndex: 1,
 		locale: {},
 		theme: {},
-		hideYearsOnSelect: true
+		hideYearsOnSelect: true,
+		events: []
 	};
 	static propTypes = {
 		selectedDate: validDate,
@@ -87,7 +88,8 @@ export default class InfiniteCalendar extends Component {
 		shouldHeaderAnimate: PropTypes.bool,
 		showOverlay: PropTypes.bool,
 		showTodayHelper: PropTypes.bool,
-		showHeader: PropTypes.bool
+		showHeader: PropTypes.bool,
+		events: PropTypes.array
 	};
 	componentDidMount() {
 		let {autoFocus, keyboardSupport} = this.props;
@@ -370,6 +372,7 @@ export default class InfiniteCalendar extends Component {
 			showHeader,
 			tabIndex,
 			width,
+			events,
 			...other
 		} = this.props;
 		let disabledDates = this.getDisabledDates(this.props.disabledDates);
@@ -412,6 +415,7 @@ export default class InfiniteCalendar extends Component {
 							maxDate={parseDate(maxDate)}
 							theme={theme}
 							locale={locale}
+							events={events}
 							overscanMonthCount={overscanMonthCount}
 						/>
 					</div>
