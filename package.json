@@ -1,22 +1,26 @@
 {
-  "name": "react-infinite-calendar",
+  "name": "react-infinite-calendar-events",
   "version": "1.2.2",
-  "description": "Infinite scrolling date-picker built with React, with localization, themes, keyboard support, and more.",
-  "author": {
-    "name": "Clauderic Demers",
-    "email": "me@ced.io"
+  "description": "Infinite scrolling date-picker built with React, with localization, themes, keyboard support, events and more.",
+  "author": [{
+    "name": "Sebastian Rios",
+    "email": "seba.rios@gmail.com"
   },
-  "user": "clauderic",
-  "homepage": "https://github.com/clauderic/react-infinite-calendar",
+  {
+    "name": "Alejandro Claveir",
+    "email": "alejandro.claveir@gmail.com"
+  }],
+  "user": "smtx",
+  "homepage": "https://github.com/smtx/react-infinite-calendar-events",
   "main": "dist/commonjs/index.js",
   "jsnext:main": "dist/es6/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/clauderic/react-infinite-calendar.git"
+    "url": "https://github.com/smtx/react-infinite-calendar-events.git"
   },
   "bugs": {
-    "url": "https://github.com/clauderic/react-infinite-calendar/issues"
+    "url": "https://github.com/smtx/react-infinite-calendar-events/issues"
   },
   "keywords": [
     "react",
@@ -34,7 +38,8 @@
     "virtual",
     "picker",
     "material",
-    "flat"
+    "flat",
+    "events"
   ],
   "scripts": {
     "start": "node server.js",
