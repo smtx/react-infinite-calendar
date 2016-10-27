@@ -93,7 +93,15 @@
 
     &.multipleEvents {
       position: absolute;
-      left: 0;
+      left: 0;&:hover {
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                background-color: blue;
+                z-index: -1;
+            }
+        }
       top: 0;
     }
 
@@ -107,6 +115,12 @@
 
         &.disabled > span {
             color: #AAA;
+        }
+
+        &:hover {
+            &:before {
+                background-color: #000aad;
+            }
         }
 
         &:before {
@@ -134,6 +148,13 @@
             color: #AAA;
         }
 
+        &:hover {
+            &:before {
+                @include circleLeft();
+                background-color: #840000;
+            }
+        }
+
         &:before {
             @include circleLeft();
             box-shadow: inset 0 0 0 1px;
@@ -157,6 +178,15 @@
 
         &.disabled > span {
             color: #AAA;
+        }
+
+        &:hover {
+            &:before {
+                background-color: #840000;
+                border-radius: 0%;
+                width: $rowHeight;
+                margin-left: -0.5 * ($rowHeight);
+            }
         }
 
         &:before {
@@ -191,6 +221,13 @@
 
         &.disabled > span {
             color: #AAA;
+        }
+
+        &:hover {
+            &:before {
+                @include circleRigth();
+                background-color: #840000;
+            }
         }
 
         &:before {
