@@ -33,11 +33,10 @@ export default function Day({
 				${isEventMiddle ? ' ' + style.eventMiddle : ''}
 				${isEventEnd ? ' ' + style.eventEnd : ''}
 			`}
-
 			data-date={yyyymmdd}
 			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt) : null}
 		>
-			{(eventsQty > 1) &&	<span className={style.multipleEvents}>{`x${eventsQty}`}</span> }
+			{(eventsQty > 1) &&	<span className={style.multipleEvents} style={{backgroundColor: (isEventStart || isEventMiddle || isEventEnd) ? 'red' : '#0077ff'}}>{`x${eventsQty}`}</span>}
 			{(day === 1) && <span className={style.month}>{monthShort}</span>}
 			<span>{day}</span>
 			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}

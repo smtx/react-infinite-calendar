@@ -40,12 +40,11 @@ export default class Month extends Component {
 					disabledDays && disabledDays.length && disabledDays.indexOf(date.date.day()) !== -1 ||
 					disabledDates && disabledDates.length && disabledDates.indexOf(date.yyyymmdd) !== -1
 				);
-				eventsQty = events.filter(event => date.yyyymmdd === event.eventStart && !event.eventEnd).length;
+				eventsQty = events.filter(event => date.yyyymmdd === event.eventStart || date.yyyymmdd === event.eventEnd || date.yyyymmdd > event.eventStart && date.yyyymmdd < event.eventEnd).length;
 				isEvent = eventsQty > 0;
 				isEventStart = events.filter(event => date.yyyymmdd === event.eventStart && event.eventEnd).length > 0;
 				isEventMiddle = events.filter(event => date.yyyymmdd > event.eventStart && (event.eventEnd && date.yyyymmdd < event.eventEnd)).length > 0;
 				isEventEnd = events.filter(event => date.yyyymmdd === event.eventEnd).length > 0;
-
 
 				days[k] = (
 					<Day
