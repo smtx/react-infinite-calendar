@@ -203,6 +203,12 @@
     position: absolute;
     left: 0;
     top: 0; }
+    .Cal__Day__root.Cal__Day__multipleEvents:hover {
+      position: relative;
+      z-index: 1; }
+      .Cal__Day__root.Cal__Day__multipleEvents:hover:before {
+        background-color: blue;
+        z-index: -1; }
   .Cal__Day__root.Cal__Day__event {
     position: relative;
     z-index: 2; }
@@ -210,6 +216,8 @@
       color: #3d3d3d; }
     .Cal__Day__root.Cal__Day__event.Cal__Day__disabled > span {
       color: #AAA; }
+    .Cal__Day__root.Cal__Day__event:hover:before {
+      background-color: #000aad; }
     .Cal__Day__root.Cal__Day__event:before {
       content: '';
       position: absolute;
@@ -233,6 +241,22 @@
       color: #3d3d3d; }
     .Cal__Day__root.Cal__Day__eventStart.Cal__Day__disabled > span {
       color: #AAA; }
+    .Cal__Day__root.Cal__Day__eventStart:hover:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 52px;
+      height: 52px;
+      margin-top: -26px;
+      margin-left: -26px;
+      border-radius: 50%;
+      width: 56px;
+      margin-left: -28px;
+      border-radius: 0%;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      background-color: #840000; }
     .Cal__Day__root.Cal__Day__eventStart:before {
       content: '';
       position: absolute;
@@ -261,6 +285,11 @@
       color: #3d3d3d; }
     .Cal__Day__root.Cal__Day__eventMiddle.Cal__Day__disabled > span {
       color: #AAA; }
+    .Cal__Day__root.Cal__Day__eventMiddle:hover:before {
+      background-color: #840000;
+      border-radius: 0%;
+      width: 56px;
+      margin-left: -28px; }
     .Cal__Day__root.Cal__Day__eventMiddle:before {
       content: '';
       position: absolute;
@@ -285,6 +314,22 @@
       color: #3d3d3d; }
     .Cal__Day__root.Cal__Day__eventEnd.Cal__Day__disabled > span {
       color: #AAA; }
+    .Cal__Day__root.Cal__Day__eventEnd:hover:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 52px;
+      height: 52px;
+      margin-top: -26px;
+      margin-left: -26px;
+      border-radius: 50%;
+      width: 56px;
+      margin-left: -28px;
+      border-radius: 0%;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background-color: #840000; }
     .Cal__Day__root.Cal__Day__eventEnd:before {
       content: '';
       position: absolute;
@@ -344,7 +389,7 @@
   width: 20px;
   color: white !important;
   line-height: 20px;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: bold;
   background-color: red;
   border-radius: 100%; }
