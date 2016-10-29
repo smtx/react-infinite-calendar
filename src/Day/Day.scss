@@ -14,20 +14,20 @@
 
 @mixin circleLeft() {
     @include circle();
-    width: $rowHeight;
-    margin-left: -0.5 * ($rowHeight);
-    border-radius: 0%;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+    border-radius: 50% 0% 0% 50%;
 }
 
 @mixin circleRigth() {
     @include circle();
-    width: $rowHeight;
-    margin-left: -0.5 * ($rowHeight);
-    border-radius: 0%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    left: 0;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    right: 0;
+    border-radius: 0% 50% 50% 0%;
 }
 
 .root {
@@ -184,8 +184,9 @@
             &:before {
                 background-color: #840000;
                 border-radius: 0%;
-                width: $rowHeight;
-                margin-left: -0.5 * ($rowHeight);
+                width: 100%;
+                margin-left: 0;
+                left: 0;
             }
         }
 
@@ -193,11 +194,11 @@
             content: '';
             position: absolute;
             top: 50%;
-            left: 50%;
-            width: $rowHeight;
+            left: 0;
+            width: 100%;
             height: $rowHeight - 4px;
             margin-top: -0.5 * ($rowHeight - 4px);
-            margin-left: -0.5 * ($rowHeight);
+            margin-left: 0;
             border-radius: 0%;
             box-shadow: inset 0 0 0 1px;
             z-index: -1;

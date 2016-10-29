@@ -251,11 +251,10 @@
       margin-top: -26px;
       margin-left: -26px;
       border-radius: 50%;
-      width: 56px;
-      margin-left: -28px;
-      border-radius: 0%;
-      border-top-left-radius: 50%;
-      border-bottom-left-radius: 50%;
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+      border-radius: 50% 0% 0% 50%;
       background-color: #840000; }
     .Cal__Day__root.Cal__Day__eventStart:before {
       content: '';
@@ -267,11 +266,10 @@
       margin-top: -26px;
       margin-left: -26px;
       border-radius: 50%;
-      width: 56px;
-      margin-left: -28px;
-      border-radius: 0%;
-      border-top-left-radius: 50%;
-      border-bottom-left-radius: 50%;
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+      border-radius: 50% 0% 0% 50%;
       box-shadow: inset 0 0 0 1px;
       z-index: -1;
       background-color: #ffb2b2;
@@ -288,17 +286,18 @@
     .Cal__Day__root.Cal__Day__eventMiddle:hover:before {
       background-color: #840000;
       border-radius: 0%;
-      width: 56px;
-      margin-left: -28px; }
+      width: 100%;
+      margin-left: 0;
+      left: 0; }
     .Cal__Day__root.Cal__Day__eventMiddle:before {
       content: '';
       position: absolute;
       top: 50%;
-      left: 50%;
-      width: 56px;
+      left: 0;
+      width: 100%;
       height: 52px;
       margin-top: -26px;
-      margin-left: -28px;
+      margin-left: 0;
       border-radius: 0%;
       box-shadow: inset 0 0 0 1px;
       z-index: -1;
@@ -324,11 +323,12 @@
       margin-top: -26px;
       margin-left: -26px;
       border-radius: 50%;
-      width: 56px;
-      margin-left: -28px;
-      border-radius: 0%;
-      border-top-right-radius: 50%;
-      border-bottom-right-radius: 50%;
+      left: 0;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+      right: 0;
+      border-radius: 0% 50% 50% 0%;
       background-color: #840000; }
     .Cal__Day__root.Cal__Day__eventEnd:before {
       content: '';
@@ -340,11 +340,12 @@
       margin-top: -26px;
       margin-left: -26px;
       border-radius: 50%;
-      width: 56px;
-      margin-left: -28px;
-      border-radius: 0%;
-      border-top-right-radius: 50%;
-      border-bottom-right-radius: 50%;
+      left: 0;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+      right: 0;
+      border-radius: 0% 50% 50% 0%;
       box-shadow: inset 0 0 0 1px;
       z-index: -1;
       background-color: #ffb2b2;

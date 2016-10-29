@@ -12,11 +12,10 @@ export default function Day({
 	monthShort,
 	locale,
 	theme,
-	isEvent,
 	isEventStart,
 	isEventMiddle,
 	isEventEnd,
-	eventsQty,
+	eventsList,
 }) {
 	var {date: mmt, yyyymmdd} = date;
 	var year = mmt.year();
@@ -28,15 +27,15 @@ export default function Day({
 				${style.root}${isToday ? ' ' + style.today : ''}
 				${isSelected ? ' ' + style.selected : ''}
 				${isDisabled ? ' ' + style.disabled : ' ' + style.enabled}
-				${isEvent ? ' ' + style.event : ''}
+				${eventsList.length > 0 ? ' ' + style.event : ''}
 				${isEventStart ? ' ' + style.eventStart : ''}
 				${isEventMiddle ? ' ' + style.eventMiddle : ''}
 				${isEventEnd ? ' ' + style.eventEnd : ''}
 			`}
 			data-date={yyyymmdd}
-			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt) : null}
+			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt, eventsList) : null}
 		>
-			{(eventsQty > 1) &&	<span className={style.multipleEvents} style={{backgroundColor: (isEventStart || isEventMiddle || isEventEnd) ? 'red' : '#0077ff'}}>{`x${eventsQty}`}</span>}
+			{(eventsList.length > 1) &&	<span className={style.multipleEvents} style={{backgroundColor: (isEventStart || isEventMiddle || isEventEnd) ? 'red' : '#0077ff'}}>{`x${eventsList.length}`}</span>}
 			{(day === 1) && <span className={style.month}>{monthShort}</span>}
 			<span>{day}</span>
 			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}
