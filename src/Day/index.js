@@ -35,7 +35,7 @@ export default function Day({
 			data-date={yyyymmdd}
 			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt, eventsList) : null}
 		>
-			{(eventsList.length > 1) &&	<span className={style.multipleEvents} style={{backgroundColor: (isEventStart || isEventMiddle || isEventEnd) ? 'red' : '#0077ff'}}>{`x${eventsList.length}`}</span>}
+			{(eventsList.length > 1) &&	<span className={style.multipleEvents} style={{backgroundColor: ((isEventStart && !isEventEnd) || isEventMiddle || (!isEventStart && isEventEnd) ) ? '#ff0000' : '#0077ff'}}>{`x${eventsList.length}`}</span>}
 			{(day === 1) && <span className={style.month}>{monthShort}</span>}
 			<span>{day}</span>
 			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}
