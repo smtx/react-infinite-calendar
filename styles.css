@@ -358,6 +358,73 @@
       display: none; }
     .Cal__Day__root.Cal__Day__selected:before {
       display: none; }
+    .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionStart {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 52px;
+      height: 52px;
+      margin-top: -26px;
+      margin-left: -26px;
+      border-radius: 50%;
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+      border-radius: 50% 0% 0% 50%;
+      line-height: 56px;
+      z-index: 2; }
+      .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionStart .Cal__Day__month {
+        top: 9px; }
+      .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionStart .Cal__Day__day {
+        position: relative;
+        top: 5px;
+        font-weight: bold;
+        font-size: 18px; }
+    .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionEnd {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 52px;
+      height: 52px;
+      margin-top: -26px;
+      margin-left: -26px;
+      border-radius: 50%;
+      left: 0;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+      right: 0;
+      border-radius: 0% 50% 50% 0%;
+      line-height: 56px;
+      z-index: 2; }
+      .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionEnd .Cal__Day__month {
+        top: 9px; }
+      .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionEnd .Cal__Day__day {
+        position: relative;
+        top: 5px;
+        font-weight: bold;
+        font-size: 18px; }
+    .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionMiddle {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 52px;
+      margin-top: -26px;
+      margin-left: 0;
+      border-radius: 0%;
+      line-height: 56px;
+      z-index: 2; }
+      .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionMiddle .Cal__Day__month {
+        top: 9px; }
+      .Cal__Day__root.Cal__Day__selected .Cal__Day__selectionMiddle .Cal__Day__day {
+        position: relative;
+        top: 5px;
+        font-weight: bold;
+        font-size: 18px; }
     .Cal__Day__root.Cal__Day__selected .Cal__Day__selection {
       content: '';
       position: absolute;
