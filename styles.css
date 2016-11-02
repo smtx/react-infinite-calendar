@@ -205,7 +205,7 @@
     top: 0; }
     .Cal__Day__root.Cal__Day__multipleEvents:hover {
       position: relative;
-      z-index: 1; }
+      z-index: 1000; }
       .Cal__Day__root.Cal__Day__multipleEvents:hover:before {
         background-color: blue;
         z-index: -1; }
@@ -455,6 +455,7 @@
   top: 0;
   height: 20px;
   width: 20px;
+  z-index: 1000;
   color: white !important;
   line-height: 20px;
   font-size: 9px;
