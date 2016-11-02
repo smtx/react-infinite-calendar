@@ -30,7 +30,7 @@ export default function Day({
 				${eventsList.length > 0 ? ' ' + style.event : ''}
 				${isEventStart ? ' ' + style.eventStart : ''}
 				${isEventMiddle ? ' ' + style.eventMiddle : ''}
-				${isEventEnd ? ' ' + style.eventEnd : ''}
+				${isEventEnd && !isEventMiddle? ' ' + style.eventEnd : ''}
 			`}
 			data-date={yyyymmdd}
 			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt, eventsList) : null}
@@ -40,7 +40,12 @@ export default function Day({
 			<span>{day}</span>
 			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}
 			{isSelected &&
-				<div className={style.selection} style={{backgroundColor: (typeof theme.selectionColor == 'function') ? theme.selectionColor(mmt) : theme.selectionColor, color: theme.textColor.active}}>
+				<div className={`
+						${isEventStart ? ' ' + style.selectionStart : ''}
+						${isEventMiddle ? ' ' + style.selectionMiddle : ''}
+						${isEventEnd && !isEventMiddle? ' ' + style.selectionEnd : ''}
+						${!isEventStart && !isEventMiddle && !isEventEnd? ' ' + style.selection : ''}
+					`} style={{backgroundColor: (typeof theme.selectionColor == 'function') ? theme.selectionColor(mmt) : theme.selectionColor, color: theme.textColor.active}}>
 					<span className={style.month}>{(isToday) ? (locale.todayLabel.short || locale.todayLabel.long) : monthShort}</span>
 					<span className={style.day}>{day}</span>
 				</div>
