@@ -28,9 +28,9 @@ export default function Day({
 				${isSelected ? ' ' + style.selected : ''}
 				${isDisabled ? ' ' + style.disabled : ' ' + style.enabled}
 				${eventsList.length > 0 ? ' ' + style.event : ''}
-				${isEventStart ? ' ' + style.eventStart : ''}
+				${isEventStart && !isEventMiddle && !isEventEnd ? ' ' + style.eventStart : ''}
 				${isEventMiddle ? ' ' + style.eventMiddle : ''}
-				${isEventEnd && !isEventMiddle? ' ' + style.eventEnd : ''}
+				${isEventEnd && !isEventMiddle && !isEventStart ? ' ' + style.eventEnd : ''}
 			`}
 			data-date={yyyymmdd}
 			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt, eventsList) : null}
