@@ -1,15 +1,17 @@
 {
   "name": "react-infinite-calendar-events",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Infinite scrolling date-picker built with React, with localization, themes, keyboard support, events and more.",
-  "author": [{
-    "name": "Sebastian Rios",
-    "email": "seba.rios@gmail.com"
-  },
-  {
-    "name": "Alejandro Claveir",
-    "email": "alejandro.claveir@gmail.com"
-  }],
+  "author": [
+    {
+      "name": "Sebastian Rios",
+      "email": "seba.rios@gmail.com"
+    },
+    {
+      "name": "Alejandro Claveir",
+      "email": "alejandro.claveir@gmail.com"
+    }
+  ],
   "user": "smtx",
   "homepage": "https://github.com/smtx/react-infinite-calendar-events",
   "main": "dist/commonjs/index.js",
@@ -56,7 +58,7 @@
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "dom-helpers": "^2.4.0",
+    "dom-helpers": "^3.1.0",
     "lodash": "^4.12.0",
     "moment": "^2.13.0",
     "moment-range": "^2.2.0",
